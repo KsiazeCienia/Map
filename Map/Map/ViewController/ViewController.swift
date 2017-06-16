@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController {
 
@@ -39,6 +40,7 @@ class MapViewController: UIViewController {
     }
 
     //MARK:- TODO co w wypadku błedu
-    
 }
+
+extension MapViewController: 
 
