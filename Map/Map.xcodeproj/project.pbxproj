@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6C526E6FF64FC41F571C89A1 /* Pods_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD202F89159AE322D83E858 /* Pods_Map.framework */; };
+		D31527031EF4041E007C8016 /* LocalizationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31527021EF4041E007C8016 /* LocalizationHandler.swift */; };
 		D35934F71EF2EFB90043C721 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D35934F51EF2EFB90043C721 /* LaunchScreen.storyboard */; };
 		D35934F81EF2EFB90043C721 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D35934F61EF2EFB90043C721 /* Main.storyboard */; };
 		D35934FC1EF2EFF80043C721 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D35934FB1EF2EFF80043C721 /* Info.plist */; };
@@ -19,7 +20,6 @@
 		D35935081EF3C1DB0043C721 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35935071EF3C1DB0043C721 /* URLBuilder.swift */; };
 		D359350A1EF3C1FD0043C721 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35935091EF3C1FD0043C721 /* APIClient.swift */; };
 		D359350C1EF3C5970043C721 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359350B1EF3C5970043C721 /* APIManager.swift */; };
-		D359350E1EF3C8230043C721 /* APIParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359350D1EF3C8230043C721 /* APIParser.swift */; };
 		D35935101EF3C87A0043C721 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359350F1EF3C87A0043C721 /* Pin.swift */; };
 		D35935121EF3CA840043C721 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35935111EF3CA840043C721 /* Constants.swift */; };
 		D35935141EF3D6BA0043C721 /* PinProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35935131EF3D6BA0043C721 /* PinProvider.swift */; };
@@ -30,6 +30,7 @@
 		956D3653450E9CE6D18F338B /* Pods-Map.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Map.release.xcconfig"; path = "Pods/Target Support Files/Pods-Map/Pods-Map.release.xcconfig"; sourceTree = "<group>"; };
 		B5F442686A512CB1827E14AD /* Pods-Map.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Map.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Map/Pods-Map.debug.xcconfig"; sourceTree = "<group>"; };
 		BBD202F89159AE322D83E858 /* Pods_Map.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Map.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D31527021EF4041E007C8016 /* LocalizationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationHandler.swift; sourceTree = "<group>"; };
 		D35934D81EF2EBC50043C721 /* Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Map.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D35934F51EF2EFB90043C721 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D35934F61EF2EFB90043C721 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -42,7 +43,6 @@
 		D35935071EF3C1DB0043C721 /* URLBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		D35935091EF3C1FD0043C721 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		D359350B1EF3C5970043C721 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		D359350D1EF3C8230043C721 /* APIParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIParser.swift; sourceTree = "<group>"; };
 		D359350F1EF3C87A0043C721 /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		D35935111EF3CA840043C721 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D35935131EF3D6BA0043C721 /* PinProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinProvider.swift; sourceTree = "<group>"; };
@@ -143,6 +143,7 @@
 		D35934F11EF2ECA30043C721 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D31527021EF4041E007C8016 /* LocalizationHandler.swift */,
 				D359350F1EF3C87A0043C721 /* Pin.swift */,
 			);
 			path = Model;
@@ -170,7 +171,6 @@
 				D35935071EF3C1DB0043C721 /* URLBuilder.swift */,
 				D35935091EF3C1FD0043C721 /* APIClient.swift */,
 				D359350B1EF3C5970043C721 /* APIManager.swift */,
-				D359350D1EF3C8230043C721 /* APIParser.swift */,
 				D35935131EF3D6BA0043C721 /* PinProvider.swift */,
 			);
 			path = Utilities;
@@ -311,9 +311,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D35935141EF3D6BA0043C721 /* PinProvider.swift in Sources */,
-				D359350E1EF3C8230043C721 /* APIParser.swift in Sources */,
 				D359350C1EF3C5970043C721 /* APIManager.swift in Sources */,
 				D35935061EF3C1910043C721 /* Result.swift in Sources */,
+				D31527031EF4041E007C8016 /* LocalizationHandler.swift in Sources */,
 				D35935101EF3C87A0043C721 /* Pin.swift in Sources */,
 				D35935081EF3C1DB0043C721 /* URLBuilder.swift in Sources */,
 				D35935001EF2F0AA0043C721 /* ViewController.swift in Sources */,

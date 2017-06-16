@@ -12,7 +12,7 @@ final class APIManager {
     
     fileprivate let apiClient = APIClient()
     
-    func getPins(lat: Float, lng: Float, completion: @escaping ResultBlock<[[String:Any]]>) {
+    func getPins(lat: Double, lng: Double, completion: @escaping ResultBlock<[[String:Any]]>) {
         
         let url = URLBuilder.pinsURL(withLat: lat, withLng: lng)
         

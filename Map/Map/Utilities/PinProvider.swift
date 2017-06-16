@@ -12,7 +12,7 @@ final class PinProvider {
     
     let apiManager = APIManager()
     
-    func getPinsFromAPI(lng: Float, lat: Float, succesHandler:@escaping (_ pins: [Pin]?) -> Void, errorHandler:@escaping (_ apiError: APIError) -> Void  ) {
+    func getPinsFromAPI(lng: Double, lat: Double, succesHandler:@escaping (_ pins: [Pin]?) -> Void, errorHandler:@escaping (_ apiError: APIError) -> Void  ) {
         
         apiManager.getPins(lat: lat, lng: lng) { (result) in
             switch result {

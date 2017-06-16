@@ -13,17 +13,27 @@ import CoreLocation
 class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
+    let locationManager = CLLocationManager()
     let pinProvider = PinProvider()
     var pins = [Pin]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-  
-        
-        pinProvider.getPinsFromAPI(lng: 2.2, lat: 2.2, succesHandler: { [weak self] (pins) in
+
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+
+    fileprivate func downloadPins(withLng lng: Double, withLat lat: Double) {
+        pinProvider.getPinsFromAPI(lng: lng, lat: lat, succesHandler: { [weak self] (pins) in
             if let actualPins = pins {
                 self?.pins = actualPins
+                self?.setPins()
             } else {
                 //TODO: Show alert
             }
@@ -31,16 +41,40 @@ class MapViewController: UIViewController {
         }) { [weak self] (error) in
             //TODO: SHOW API ALER ERRO
         }
-        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    fileprivate func updateMapWithUserLocation(location: CLLocation) {
+        let span = MKCoordinateSpanMake(MapKeys.latitudeDelta, MapKeys.longitudeDelta)
+        let userRegion = MKCoordinateRegion(center: location.coordinate, span: span)
+        mapView.setRegion(userRegion, animated: true)
     }
-
-    //MARK:- TODO co w wypadku błedu
+    
+    private func setPins() {
+        for pin in pins {
+            let location = CLLocationCoordinate2D(latitude: CLLocationDegrees(pin.lat), longitude: CLLocationDegrees(pin.lng))
+            let point = MKPointAnnotation()
+            point.coordinate = location
+            mapView.addAnnotation(point)
+        }
+    }
 }
 
-extension MapViewController: 
+extension MapViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        if locations.count > 0 {
+            locationManager.stopUpdatingLocation()
+            updateMapWithUserLocation(location: locations[0])
+            downloadPins(withLng: locations[0].coordinate.longitude.magnitude, withLat: locations[0].coordinate.latitude.magnitude)
+            print(locations[0])
+            //updateMapWithUserLocation(location: locations[0])
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+            print(error)
+    }
+    
+}
 
