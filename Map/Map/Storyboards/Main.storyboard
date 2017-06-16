@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Ostanie-->
         <scene sceneID="Igg-Sa-8ug">
             <objects>
                 <viewController id="Whj-Zs-J46" sceneMemberID="viewController">
@@ -22,16 +22,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="QDw-7u-DwB"/>
+                    <tabBarItem key="tabBarItem" title="Ostanie" id="QDw-7u-DwB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ad5-3O-lEI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="687" y="67"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="Hef-w5-jJ4">
             <objects>
-                <viewController id="LWl-G4-sgW" sceneMemberID="viewController">
+                <viewController id="LWl-G4-sgW" customClass="MapViewController" customModule="Map" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="csu-pu-dYu"/>
                         <viewControllerLayoutGuide type="bottom" id="iA1-AX-3rQ"/>
@@ -39,9 +39,23 @@
                     <view key="view" contentMode="scaleToFill" id="RXA-Ue-idr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Zi6-FD-9DN">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Zi6-FD-9DN" firstAttribute="leading" secondItem="RXA-Ue-idr" secondAttribute="leading" id="Mlk-j9-CcT"/>
+                            <constraint firstAttribute="trailing" secondItem="Zi6-FD-9DN" secondAttribute="trailing" id="Xwr-Ef-5E3"/>
+                            <constraint firstItem="Zi6-FD-9DN" firstAttribute="top" secondItem="csu-pu-dYu" secondAttribute="bottom" id="YWi-ux-Mum"/>
+                            <constraint firstItem="iA1-AX-3rQ" firstAttribute="top" secondItem="Zi6-FD-9DN" secondAttribute="bottom" id="ytS-uo-uoG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lL9-xM-MBO"/>
+                    <connections>
+                        <outlet property="mapView" destination="Zi6-FD-9DN" id="erW-4n-Ujt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4sC-vW-2Wy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -83,11 +97,11 @@
             </objects>
             <point key="canvasLocation" x="-269" y="-261"/>
         </scene>
-        <!--Item 1-->
+        <!--Mapa-->
         <scene sceneID="ksf-Js-qnI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vlz-Dr-PP6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="VGr-Ht-7c8"/>
+                    <tabBarItem key="tabBarItem" title="Mapa" id="VGr-Ht-7c8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rqF-dv-V72">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
