@@ -22,6 +22,7 @@
 		D359350E1EF3C8230043C721 /* APIParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359350D1EF3C8230043C721 /* APIParser.swift */; };
 		D35935101EF3C87A0043C721 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359350F1EF3C87A0043C721 /* Pin.swift */; };
 		D35935121EF3CA840043C721 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35935111EF3CA840043C721 /* Constants.swift */; };
+		D35935141EF3D6BA0043C721 /* PinProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35935131EF3D6BA0043C721 /* PinProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		D359350D1EF3C8230043C721 /* APIParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIParser.swift; sourceTree = "<group>"; };
 		D359350F1EF3C87A0043C721 /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		D35935111EF3CA840043C721 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D35935131EF3D6BA0043C721 /* PinProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				D35935091EF3C1FD0043C721 /* APIClient.swift */,
 				D359350B1EF3C5970043C721 /* APIManager.swift */,
 				D359350D1EF3C8230043C721 /* APIParser.swift */,
+				D35935131EF3D6BA0043C721 /* PinProvider.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D35935141EF3D6BA0043C721 /* PinProvider.swift in Sources */,
 				D359350E1EF3C8230043C721 /* APIParser.swift in Sources */,
 				D359350C1EF3C5970043C721 /* APIManager.swift in Sources */,
 				D35935061EF3C1910043C721 /* Result.swift in Sources */,

@@ -33,9 +33,9 @@ enum APIError: CustomStringConvertible {
         case .noData:
             return NSLocalizedString("Lack of levles", comment: "")
         case .jsonSerializationFailed :
-            return NSLocalizedString("", comment: "")
+            return NSLocalizedString("Unexpected error", comment: "")
         case .wrongHTTPCode(code: let code):
-            return NSLocalizedString("kod \(code)", comment: "")
+            return NSLocalizedString("Code \(code)", comment: "")
         }
     }
 }

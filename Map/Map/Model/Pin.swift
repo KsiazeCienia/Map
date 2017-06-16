@@ -23,4 +23,12 @@ final class Pin {
         self.name = name
         self.imagePath = imagePath
     }
+    
+    init(withDictionar pinDict: [String:Any])   {
+        id = pinDict[APIKeys.id] as? Int ?? 0
+        name = pinDict[APIKeys.name] as? String ?? ""
+        lat = pinDict[APIKeys.lat] as? Float ?? 0
+        lng = pinDict[APIKeys.lng] as? Float ?? 0
+        imagePath = pinDict[APIKeys.avatar] as? String ?? ""
+    }    
 }
