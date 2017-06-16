@@ -10,10 +10,6 @@ import Foundation
 
 final class APIClient {
     
-    enum HTTPMethods: String {
-        case GET = "GET"
-    }
-    
     func GETRequest(withURL url: URL, completion: @escaping ResultBlock<[[String: Any]]>) {
         let (request, session) = configuration(forURL: url, httpMethod: HTTPMethods.GET.rawValue)
         session.dataTask(with: request) { (data, response, error) in

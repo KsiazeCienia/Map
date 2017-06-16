@@ -10,6 +10,7 @@ import Foundation
 final class URLBuilder {
 
     static func pinsURL(withLat lat: Float, withLng lng: Float) -> URL {
-        
+        let urlString = "https://interview-ready4s.herokuapp.com/geo?lat=\(String(lat))&lng=\(String(lng))"
+        return URL(string: urlString)!
     }
 }
