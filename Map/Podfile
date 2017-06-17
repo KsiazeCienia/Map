@@ -7,6 +7,7 @@ target 'Map' do
 
   # Pods for Map
 	pod 'RealmSwift'
+	pod 'HanekeSwift', :git => 'https://github.com/Haneke/HanekeSwift', :branch => 'feature/swift-3’
 	
 
 end

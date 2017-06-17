@@ -22,6 +22,7 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
 
         locationManager.delegate = self
+        mapView.delegate = self
         isUserLocalizationEnable()
     }
 
@@ -53,7 +54,8 @@ class MapViewController: UIViewController {
         }
         
         if let max = distances.max() {
-            let span = MKCoordinateSpanMake(max, max)
+            print(max)
+            let span = MKCoordinateSpanMake(max + 0.02, max + 0.02)
             let userRegion = MKCoordinateRegion(center: userLocation.coordinate, span: span)
             mapView.setRegion(userRegion, animated: true)
         }
@@ -89,7 +91,28 @@ class MapViewController: UIViewController {
     }
 }
 
-extension MapViewController: CLLocationManagerDelegate {
+extension MapViewController: CLLocationManagerDelegate, MKMapViewDelegate{
+    
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let reuseIdentifier = "MyIdentifier"
+        if annotation is MKUserLocation { return nil }
+        
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier) as? MKPinAnnotationView
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
+           
+            annotationView?.canShowCallout = false            // but turn off callout
+        } else {
+            annotationView?.annotation = annotation
+        }
+        
+        return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        print("siusiak")
+    }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         

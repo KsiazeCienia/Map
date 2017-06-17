@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>HanekeSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Map.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>19946E2E03F2F49D2D6B6528C9A6CFB9</key>
+		<key>08912E6A0BC7E035A762A4BA93291B6A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3E076663F2766F8844DC7DBFA060D314</key>
+		<key>0E8242B2B618CB54684CE8DAE3A08518</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>58991BFFFB5DB2DDD30D43DCDCEE1D6B</key>
+		<key>AE4759774042D8E013517E82C6F7A058</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D5AAC4524D2297E25B99E5807EF17703</key>
 		<dict>
 			<key>primary</key>
 			<true/>
