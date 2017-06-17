@@ -10,6 +10,17 @@ import UIKit
 import MapKit
 import CoreLocation
 
+class Annotation: MKPointAnnotation {
+    var id: Int?
+    
+    init(id: Int, coordinate: CLLocationCoordinate2D, title: String) {
+        super.init()
+        self.id = id
+        self.coordinate = coordinate
+        self.title = title
+    }
+}
+
 class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
@@ -23,7 +34,7 @@ class MapViewController: UIViewController {
 
         locationManager.delegate = self
         mapView.delegate = self
-        isUserLocalizationEnable()
+        askForPermisionOrRequestLocation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,13 +81,12 @@ class MapViewController: UIViewController {
     private func setPins() {
         for pin in pins {
             let location = CLLocationCoordinate2D(latitude: CLLocationDegrees(pin.lat), longitude: CLLocationDegrees(pin.lng))
-            let point = MKPointAnnotation()
-            point.coordinate = location
+            let point = Annotation(id: pin.id, coordinate: location, title: pin.name)
             mapView.addAnnotation(point)
         }
     }
     
-    private func isUserLocalizationEnable() {
+    private func askForPermisionOrRequestLocation() {
         let authorizationStatus:CLAuthorizationStatus = CLLocationManager.authorizationStatus()
         
         if authorizationStatus == CLAuthorizationStatus.denied {
@@ -97,11 +107,11 @@ extension MapViewController: CLLocationManagerDelegate, MKMapViewDelegate{
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let reuseIdentifier = "MyIdentifier"
         if annotation is MKUserLocation { return nil }
+
         
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier) as? MKPinAnnotationView
         if annotationView == nil {
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
-           
             annotationView?.canShowCallout = false            // but turn off callout
         } else {
             annotationView?.annotation = annotation
@@ -112,14 +122,17 @@ extension MapViewController: CLLocationManagerDelegate, MKMapViewDelegate{
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         print("siusiak")
+        let pointAnnontation = view.annotation as? Annotation
+        print(pointAnnontation?.id)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        manager.stopUpdatingLocation()
+        manager.delegate = nil
         
         if let location = locations.first {
             //locationManager.stopUpdatingLocation()
             userLocation = location
-            //updateMapWithUserLocation(location: locations[0])
             downloadPins(withLng: location.coordinate.longitude.magnitude, withLat: location.coordinate.latitude.magnitude)
             print(location)
         }
@@ -129,5 +142,10 @@ extension MapViewController: CLLocationManagerDelegate, MKMapViewDelegate{
             print(error)
     }
     
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            manager.requestLocation()
+        }
+    }
 }
 
