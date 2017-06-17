@@ -112,7 +112,6 @@ extension MapViewController: CLLocationManagerDelegate, MKMapViewDelegate{
         if let pointAnnontation = view.annotation as? Annotation {
             performSegue(withIdentifier: Segue.goToSinglePlaceFromMap, sender: pointAnnontation)
         }
-        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

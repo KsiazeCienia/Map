@@ -46,7 +46,6 @@ extension LastVisitedViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let visitedCell = visitedTableView.dequeueReusableCell(withIdentifier: VisitedTableViewCell.identifier) as! VisitedTableViewCell
         visitedCell.setUpCell(pin: pins[indexPath.row])
         return visitedCell
