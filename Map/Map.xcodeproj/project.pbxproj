@@ -40,7 +40,6 @@
 		D31527041EF52762007C8016 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		D31527061EF55DF3007C8016 /* SinglePlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SinglePlaceViewController.swift; path = ViewController/SinglePlaceViewController.swift; sourceTree = "<group>"; };
 		D315270A1EF56D9D007C8016 /* DataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
-		D315270C1EF56F84007C8016 /* Map.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Map.entitlements; sourceTree = "<group>"; };
 		D315270E1EF57898007C8016 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		D31527311EF580AE007C8016 /* LastVisitedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LastVisitedViewController.swift; path = ViewController/LastVisitedViewController.swift; sourceTree = "<group>"; };
 		D31527331EF5825B007C8016 /* VisitedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitedTableViewCell.swift; sourceTree = "<group>"; };
@@ -109,7 +108,6 @@
 		D35934DA1EF2EBC50043C721 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				D315270C1EF56F84007C8016 /* Map.entitlements */,
 				D35934F41EF2ECCE0043C721 /* Utilities */,
 				D35934F31EF2ECC30043C721 /* ViewController */,
 				D35934F21EF2ECAC0043C721 /* Extensions */,

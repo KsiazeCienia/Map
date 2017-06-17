@@ -49,7 +49,7 @@ final class MapViewController: UIViewController {
         }
     }
     
-    private func showAlert(withTitle title:String, message: String)  {
+    fileprivate func showAlert(withTitle title:String, message: String)  {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
@@ -64,16 +64,10 @@ final class MapViewController: UIViewController {
         }
         
         if let max = distances.max() {
-            let span = MKCoordinateSpanMake(max + 0.02, max + 0.02)
+            let span = MKCoordinateSpanMake(max + MapKeys.latitudeDelta, max + MapKeys.longitudeDelta)
             let userRegion = MKCoordinateRegion(center: userLocation.coordinate, span: span)
             mapView.setRegion(userRegion, animated: true)
         }
-    }
-    
-    fileprivate func updateMapWithUserLocation(location: CLLocation) {
-        let span = MKCoordinateSpanMake(MapKeys.latitudeDelta, MapKeys.longitudeDelta)
-        let userRegion = MKCoordinateRegion(center: location.coordinate, span: span)
-        mapView.setRegion(userRegion, animated: true)
     }
     
     private func setPins() {
@@ -132,7 +126,7 @@ extension MapViewController: CLLocationManagerDelegate, MKMapViewDelegate{
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-            print(error)
+            showAlert(withTitle: "", message: "Brak połączenia GPS")
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
