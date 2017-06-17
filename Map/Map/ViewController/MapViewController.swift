@@ -10,39 +10,28 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class Annotation: MKPointAnnotation {
-    var id: Int?
-    
-    init(id: Int, coordinate: CLLocationCoordinate2D, title: String) {
-        super.init()
-        self.id = id
-        self.coordinate = coordinate
-        self.title = title
-    }
-}
-
-class MapViewController: UIViewController {
+final class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     
-    let locationManager = CLLocationManager()
-    let pinProvider = PinProvider()
-    let dataBase = DataBase()
+    private let locationManager = CLLocationManager()
+    private let pinProvider = PinProvider()
+    private let dataBase = DataBase()
     
-    var userLocation = CLLocation()
-    var pins = [Pin]()
-    var selectedPin: Pin?
+    fileprivate var userLocation = CLLocation()
+    private var pins = [Pin]()
+    private var selectedPin: Pin?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        locationManager.delegate = self
-        mapView.delegate = self
+        setUpMap()
         askForPermisionOrRequestLocation()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    private func setUpMap() {
+        locationManager.delegate = self
+        mapView.delegate = self
+        mapView.showsUserLocation = true
     }
 
     fileprivate func downloadPins(withLng lng: Double, withLat lat: Double) {
@@ -127,23 +116,6 @@ class MapViewController: UIViewController {
 }
 
 extension MapViewController: CLLocationManagerDelegate, MKMapViewDelegate{
-    
-    
-//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//        let reuseIdentifier = "MyIdentifier"
-//        if annotation is MKUserLocation { return nil }
-//
-//        
-//        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier) as? MKPinAnnotationView
-//        if annotationView == nil {
-//            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
-//            annotationView?.canShowCallout = false            // but turn off callout
-//        } else {
-//            annotationView?.annotation = annotation
-//        }
-//        
-//        return annotationView
-//    }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let pointAnnontation = view.annotation as? Annotation {

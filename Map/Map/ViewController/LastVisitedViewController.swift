@@ -8,13 +8,13 @@
 
 import UIKit
 
-class LastVisitedViewController: UIViewController {
+final class LastVisitedViewController: UIViewController {
     
     @IBOutlet weak var visitedTableView: UITableView!
     
-    let dataBase = DataBase()
+    private let dataBase = DataBase()
     
-    var pins = [Pin]()
+    fileprivate var pins = [Pin]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
