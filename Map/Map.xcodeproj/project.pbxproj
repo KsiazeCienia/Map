@@ -157,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		D35934F31EF2ECC30043C721 /* ViewController */ = {

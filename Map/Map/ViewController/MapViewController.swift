@@ -28,6 +28,7 @@ class MapViewController: UIViewController {
     var userLocation = CLLocation()
     let pinProvider = PinProvider()
     var pins = [Pin]()
+    var selectedPin: Pin?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +52,7 @@ class MapViewController: UIViewController {
                 //TODO: Show alert
             }
             
-        }) { [weak self] (error) in
+        }) { (error) in
             //TODO: SHOW API ALER ERRO
         }
     }
@@ -99,6 +100,23 @@ class MapViewController: UIViewController {
             self.locationManager.requestLocation()
         }
     }
+    
+    private func pinWithId(id: Int) -> Pin {
+        for i in 0 ..< pins.count {
+            if (pins[i].id == id) {
+                return pins[i]
+            }
+        }
+        return pins[0]
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let annotation = sender as? Annotation else { return }
+        let singlePlaceVC = segue.destination as! SinglePlaceViewController
+        if let actualId = annotation.id {
+            singlePlaceVC.currentPin = pinWithId(id: actualId)
+        }
+    }
 }
 
 extension MapViewController: CLLocationManagerDelegate, MKMapViewDelegate{
@@ -122,7 +140,7 @@ extension MapViewController: CLLocationManagerDelegate, MKMapViewDelegate{
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let pointAnnontation = view.annotation as? Annotation {
-            
+            performSegue(withIdentifier: Segue.goToSinglePlace, sender: pointAnnontation)
         }
         
     }
@@ -132,10 +150,8 @@ extension MapViewController: CLLocationManagerDelegate, MKMapViewDelegate{
         manager.delegate = nil
         
         if let location = locations.first {
-            //locationManager.stopUpdatingLocation()
             userLocation = location
             downloadPins(withLng: location.coordinate.longitude.magnitude, withLat: location.coordinate.latitude.magnitude)
-            print(location)
         }
     }
     

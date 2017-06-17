@@ -19,9 +19,20 @@ final class SinglePlaceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(currentPin.id)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    private func initView() {
+        nameLabel.text = currentPin.name
+        lngLabel.text = String(currentPin.lng)
+        latLabel.text = String(currentPin.lat)
+    }
+    
+    private func setImage() {
+        
     }
 }

@@ -24,3 +24,7 @@ struct MapKeys {
     static let latitudeDelta = 0.05
     static let longitudeDelta = 0.05
 }
+
+struct Segue {
+    static let goToSinglePlace = "goToSinglePlace"
+}

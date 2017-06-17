@@ -68,6 +68,7 @@
                     <navigationItem key="navigationItem" id="lL9-xM-MBO"/>
                     <connections>
                         <outlet property="mapView" destination="Zi6-FD-9DN" id="erW-4n-Ujt"/>
+                        <segue destination="f3Q-aV-g7B" kind="show" identifier="goToSinglePlace" id="S6V-pH-yo0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4sC-vW-2Wy" userLabel="First Responder" sceneMemberID="firstResponder"/>
