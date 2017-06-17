@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-final class Pin {
+class Pin {
     
     let id: Int
     let lng: Double
@@ -28,5 +28,7 @@ final class Pin {
         lat = pinDict[APIKeys.lat] as? Double ?? 0
         lng = pinDict[APIKeys.lng] as? Double ?? 0
         imagePath = pinDict[APIKeys.avatar] as? String ?? ""
-    }    
+    }
 }
+
+

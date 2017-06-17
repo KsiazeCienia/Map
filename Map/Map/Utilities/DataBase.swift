@@ -15,10 +15,12 @@ class DataBase {
         do {
             let realm = try Realm()
             try realm.write {
-                realm.add(pin)
+                //realm.add(pin)
             }
         } catch let error as NSError {
             fatalError(error.localizedDescription)
         }
     }
 }
+
+
