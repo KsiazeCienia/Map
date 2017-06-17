@@ -19,14 +19,10 @@ final class SinglePlaceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initView()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        setUpView()
     }
     
-    private func initView() {
+    private func setUpView() {
         nameLabel.text = currentPin.name
         lngLabel.text = String(currentPin.lng)
         latLabel.text = String(currentPin.lat)
@@ -35,7 +31,7 @@ final class SinglePlaceViewController: UIViewController {
     
     private func setImage() {
         let url = URL(string: currentPin.imagePath)!
-        ImageDownloader.getImage(url) { [weak self] (image, succes) in
+        ImageDownloader.getImage(url) { [weak self] (image) in
             guard let actualImage = image else { return }
             self?.image.image = actualImage
         }

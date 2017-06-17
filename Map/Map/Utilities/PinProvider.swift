@@ -9,12 +9,15 @@
 import Foundation
 
 final class PinProvider {
-    
-    let apiManager = APIManager()
+
+    fileprivate let apiClient = APIClient()
     
     func getPinsFromAPI(lng: Double, lat: Double, succesHandler:@escaping (_ pins: [Pin]?) -> Void, errorHandler:@escaping (_ apiError: APIError) -> Void  ) {
         
-        apiManager.getPins(lat: lat, lng: lng) { (result) in
+        let url = URLBuilder.pinsURL(withLat: lat, withLng: lng)
+        
+        apiClient.GETRequest(withURL: url) {
+            (result: Result<[[String:Any]]>) in
             switch result {
             case .Error(error: let error):
                 DispatchQueue.main.async {

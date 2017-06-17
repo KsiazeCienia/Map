@@ -1,14 +1,8 @@
 PODS:
   - HanekeSwift (0.10.1)
-  - Realm (2.4.3):
-    - Realm/Headers (= 2.4.3)
-  - Realm/Headers (2.4.3)
-  - RealmSwift (2.4.3):
-    - Realm (= 2.4.3)
 
 DEPENDENCIES:
   - HanekeSwift (from `https://github.com/Haneke/HanekeSwift`, branch `feature/swift-3`)
-  - RealmSwift
 
 EXTERNAL SOURCES:
   HanekeSwift:
@@ -22,9 +16,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   HanekeSwift: 4113367892828e7700d24a384027de6ebc79aad1
-  Realm: e08d60b0048ccccd3949c8c28a92c4db5712d7e9
-  RealmSwift: 30d49739ccb3385d201242736ca4dda56aec9dfc
 
-PODFILE CHECKSUM: b99dcbb5464b8968a214838f75f47a46c7fc3709
+PODFILE CHECKSUM: dbf562478eb5196c11f6ebc124240a2ee2ad2831
 
 COCOAPODS: 1.2.0

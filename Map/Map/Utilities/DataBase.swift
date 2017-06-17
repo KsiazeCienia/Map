@@ -6,8 +6,8 @@
 //  Copyright © 2017 Marcin Włoczko. All rights reserved.
 //
 
-import Foundation
-import RealmSwift
+import UIKit
+import CoreData
 
 final class DataBase {
     

@@ -9,7 +9,7 @@
 import Foundation
 import Haneke
 
-typealias ImageDownloaded = (_ image: UIImage?, _ success: Bool) -> Void
+typealias ImageDownloaded = (_ image: UIImage?) -> Void
 
 final class ImageDownloader {
     
@@ -17,9 +17,9 @@ final class ImageDownloader {
         let cache = Shared.imageCache
         let fetcher = NetworkFetcher<UIImage>(URL: url)
         cache.fetch(fetcher: fetcher).onSuccess { image in
-            completion(image, true)
+            completion(image)
             }.onFailure { (error) in
-                completion(nil, false)
+                completion(nil)
         }
     }
 }

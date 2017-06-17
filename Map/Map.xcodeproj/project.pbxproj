@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6C526E6FF64FC41F571C89A1 /* Pods_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD202F89159AE322D83E858 /* Pods_Map.framework */; };
-		D31527031EF4041E007C8016 /* LocalizationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31527021EF4041E007C8016 /* LocalizationHandler.swift */; };
 		D31527051EF52762007C8016 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31527041EF52762007C8016 /* ImageDownloader.swift */; };
 		D31527071EF55DF3007C8016 /* SinglePlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31527061EF55DF3007C8016 /* SinglePlaceViewController.swift */; };
 		D315270B1EF56D9D007C8016 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D315270A1EF56D9D007C8016 /* DataBase.swift */; };
@@ -27,7 +26,6 @@
 		D35935061EF3C1910043C721 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35935051EF3C1910043C721 /* Result.swift */; };
 		D35935081EF3C1DB0043C721 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35935071EF3C1DB0043C721 /* URLBuilder.swift */; };
 		D359350A1EF3C1FD0043C721 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35935091EF3C1FD0043C721 /* APIClient.swift */; };
-		D359350C1EF3C5970043C721 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359350B1EF3C5970043C721 /* APIManager.swift */; };
 		D35935101EF3C87A0043C721 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359350F1EF3C87A0043C721 /* Pin.swift */; };
 		D35935121EF3CA840043C721 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35935111EF3CA840043C721 /* Constants.swift */; };
 		D35935141EF3D6BA0043C721 /* PinProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35935131EF3D6BA0043C721 /* PinProvider.swift */; };
@@ -38,7 +36,6 @@
 		956D3653450E9CE6D18F338B /* Pods-Map.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Map.release.xcconfig"; path = "Pods/Target Support Files/Pods-Map/Pods-Map.release.xcconfig"; sourceTree = "<group>"; };
 		B5F442686A512CB1827E14AD /* Pods-Map.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Map.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Map/Pods-Map.debug.xcconfig"; sourceTree = "<group>"; };
 		BBD202F89159AE322D83E858 /* Pods_Map.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Map.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D31527021EF4041E007C8016 /* LocalizationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationHandler.swift; sourceTree = "<group>"; };
 		D31527041EF52762007C8016 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		D31527061EF55DF3007C8016 /* SinglePlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SinglePlaceViewController.swift; path = ViewController/SinglePlaceViewController.swift; sourceTree = "<group>"; };
 		D315270A1EF56D9D007C8016 /* DataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
@@ -59,7 +56,6 @@
 		D35935051EF3C1910043C721 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		D35935071EF3C1DB0043C721 /* URLBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		D35935091EF3C1FD0043C721 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		D359350B1EF3C5970043C721 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		D359350F1EF3C87A0043C721 /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		D35935111EF3CA840043C721 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D35935131EF3D6BA0043C721 /* PinProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinProvider.swift; sourceTree = "<group>"; };
@@ -164,7 +160,6 @@
 		D35934F11EF2ECA30043C721 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D31527021EF4041E007C8016 /* LocalizationHandler.swift */,
 				D359350F1EF3C87A0043C721 /* Pin.swift */,
 			);
 			path = Model;
@@ -194,7 +189,6 @@
 				D35935051EF3C1910043C721 /* Result.swift */,
 				D35935071EF3C1DB0043C721 /* URLBuilder.swift */,
 				D35935091EF3C1FD0043C721 /* APIClient.swift */,
-				D359350B1EF3C5970043C721 /* APIManager.swift */,
 				D35935131EF3D6BA0043C721 /* PinProvider.swift */,
 				D31527041EF52762007C8016 /* ImageDownloader.swift */,
 				D315270A1EF56D9D007C8016 /* DataBase.swift */,
@@ -348,9 +342,7 @@
 				D31527321EF580AE007C8016 /* LastVisitedViewController.swift in Sources */,
 				D315270B1EF56D9D007C8016 /* DataBase.swift in Sources */,
 				D315270F1EF57898007C8016 /* Model.xcdatamodeld in Sources */,
-				D359350C1EF3C5970043C721 /* APIManager.swift in Sources */,
 				D35935061EF3C1910043C721 /* Result.swift in Sources */,
-				D31527031EF4041E007C8016 /* LocalizationHandler.swift in Sources */,
 				D35935101EF3C87A0043C721 /* Pin.swift in Sources */,
 				D35935081EF3C1DB0043C721 /* URLBuilder.swift in Sources */,
 				D31527051EF52762007C8016 /* ImageDownloader.swift in Sources */,
