@@ -118,6 +118,7 @@ class MapViewController: UIViewController {
         if let actualId = annotation.id {
             singlePlaceVC.currentPin = pinWithId(id: actualId)
             dataBase.save(pin: pinWithId(id: actualId))
+            //MARK:-TODO usunać potem bo do testów
             for pin in dataBase.getData() {
                 print(pin.id)
             }
@@ -146,7 +147,7 @@ extension MapViewController: CLLocationManagerDelegate, MKMapViewDelegate{
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let pointAnnontation = view.annotation as? Annotation {
-            performSegue(withIdentifier: Segue.goToSinglePlace, sender: pointAnnontation)
+            performSegue(withIdentifier: Segue.goToSinglePlaceFromMap, sender: pointAnnontation)
         }
         
     }

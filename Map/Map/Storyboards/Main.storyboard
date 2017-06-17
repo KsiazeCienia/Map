@@ -38,6 +38,7 @@
                     <tabBarItem key="tabBarItem" title="Ostanie" id="QDw-7u-DwB"/>
                     <connections>
                         <outlet property="visitedTableView" destination="j2k-gL-oxG" id="QCC-2e-6t4"/>
+                        <segue destination="f3Q-aV-g7B" kind="show" identifier="goToSinglePlaceFromVisited" id="X7N-N2-TFI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ad5-3O-lEI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -71,7 +72,7 @@
                     <navigationItem key="navigationItem" id="lL9-xM-MBO"/>
                     <connections>
                         <outlet property="mapView" destination="Zi6-FD-9DN" id="erW-4n-Ujt"/>
-                        <segue destination="f3Q-aV-g7B" kind="show" identifier="goToSinglePlace" id="S6V-pH-yo0"/>
+                        <segue destination="f3Q-aV-g7B" kind="show" identifier="goToSinglePlaceFromMap" id="S6V-pH-yo0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4sC-vW-2Wy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -201,4 +202,7 @@
             <point key="canvasLocation" x="685.60000000000002" y="-588.75562218890559"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="S6V-pH-yo0"/>
+    </inferredMetricsTieBreakers>
 </document>

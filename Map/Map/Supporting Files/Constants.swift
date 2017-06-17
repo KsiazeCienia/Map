@@ -26,5 +26,6 @@ struct MapKeys {
 }
 
 struct Segue {
-    static let goToSinglePlace = "goToSinglePlace"
+    static let goToSinglePlaceFromMap = "goToSinglePlaceFromMap"
+    static let goToSinglePlaceFromVisited = "goToSinglePlaceFromVisited"
 }

@@ -23,7 +23,7 @@ class VisitedTableViewCell: UITableViewCell {
     
     func setUpCell(pin: Pin) {
         nameLabel.text = pin.name
-        coordinateLabel.text = "\(pin.lat) E, \(pin.lng)"
+        coordinateLabel.text = "\(pin.lat) E, \(pin.lng) N"
     }
     
 }
