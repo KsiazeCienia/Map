@@ -35,7 +35,7 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>bleh bleh</string>
+	<string>Używaj apliakcji żeby w pełni korzystać z funkcjonalnośći aplikacji</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

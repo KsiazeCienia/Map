@@ -41,12 +41,18 @@ final class MapViewController: UIViewController {
                 self?.setPins()
                 self?.setUpRegion()
             } else {
-                //TODO: Show alert
+                self?.showAlert(withTitle: "Brak połączenia z internetem", message: "Sprawdź połączenie i spróbuj ponownie")
             }
             
-        }) { (error) in
-            //TODO: SHOW API ALER ERRO
+        }) { [weak self] (error) in
+            self?.showAlert(withTitle: "" , message: error.description)
         }
+    }
+    
+    private func showAlert(withTitle title:String, message: String)  {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
    
     private func setUpRegion() {
@@ -82,7 +88,7 @@ final class MapViewController: UIViewController {
         let authorizationStatus:CLAuthorizationStatus = CLLocationManager.authorizationStatus()
         
         if authorizationStatus == CLAuthorizationStatus.denied {
-            // TODO: Tell user that app functionality may be limited
+            showAlert(withTitle: "Brak zgodny na lokalizację", message: "Zmień ustawienia aby w pełni korzystać z funkcjonalnośći apliakcji")
         }
         else if authorizationStatus == CLAuthorizationStatus.notDetermined {
             self.locationManager.requestWhenInUseAuthorization()
@@ -93,12 +99,7 @@ final class MapViewController: UIViewController {
     }
     
     private func pinWithId(id: Int) -> Pin {
-        for i in 0 ..< pins.count {
-            if (pins[i].id == id) {
-                return pins[i]
-            }
-        }
-        return pins[0]
+        return pins.filter{$0.id == id}.first!
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -107,10 +108,6 @@ final class MapViewController: UIViewController {
         if let actualId = annotation.id {
             singlePlaceVC.currentPin = pinWithId(id: actualId)
             dataBase.save(pin: pinWithId(id: actualId))
-            //MARK:-TODO usunać potem bo do testów
-            for pin in dataBase.getData() {
-                print(pin.id)
-            }
         }
     }
 }
