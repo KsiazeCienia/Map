@@ -11,6 +11,7 @@
 		D31527031EF4041E007C8016 /* LocalizationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31527021EF4041E007C8016 /* LocalizationHandler.swift */; };
 		D31527051EF52762007C8016 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31527041EF52762007C8016 /* ImageDownloader.swift */; };
 		D31527071EF55DF3007C8016 /* SinglePlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31527061EF55DF3007C8016 /* SinglePlaceViewController.swift */; };
+		D315270B1EF56D9D007C8016 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D315270A1EF56D9D007C8016 /* DataBase.swift */; };
 		D35934F71EF2EFB90043C721 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D35934F51EF2EFB90043C721 /* LaunchScreen.storyboard */; };
 		D35934F81EF2EFB90043C721 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D35934F61EF2EFB90043C721 /* Main.storyboard */; };
 		D35934FC1EF2EFF80043C721 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D35934FB1EF2EFF80043C721 /* Info.plist */; };
@@ -35,6 +36,8 @@
 		D31527021EF4041E007C8016 /* LocalizationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationHandler.swift; sourceTree = "<group>"; };
 		D31527041EF52762007C8016 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		D31527061EF55DF3007C8016 /* SinglePlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SinglePlaceViewController.swift; path = ViewController/SinglePlaceViewController.swift; sourceTree = "<group>"; };
+		D315270A1EF56D9D007C8016 /* DataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
+		D315270C1EF56F84007C8016 /* Map.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Map.entitlements; sourceTree = "<group>"; };
 		D35934D81EF2EBC50043C721 /* Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Map.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D35934F51EF2EFB90043C721 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D35934F61EF2EFB90043C721 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -98,6 +101,7 @@
 		D35934DA1EF2EBC50043C721 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				D315270C1EF56F84007C8016 /* Map.entitlements */,
 				D35934F41EF2ECCE0043C721 /* Utilities */,
 				D35934F31EF2ECC30043C721 /* ViewController */,
 				D35934F21EF2ECAC0043C721 /* Extensions */,
@@ -178,6 +182,7 @@
 				D359350B1EF3C5970043C721 /* APIManager.swift */,
 				D35935131EF3D6BA0043C721 /* PinProvider.swift */,
 				D31527041EF52762007C8016 /* ImageDownloader.swift */,
+				D315270A1EF56D9D007C8016 /* DataBase.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -228,6 +233,11 @@
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = YY346RZE89;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -318,6 +328,7 @@
 			files = (
 				D31527071EF55DF3007C8016 /* SinglePlaceViewController.swift in Sources */,
 				D35935141EF3D6BA0043C721 /* PinProvider.swift in Sources */,
+				D315270B1EF56D9D007C8016 /* DataBase.swift in Sources */,
 				D359350C1EF3C5970043C721 /* APIManager.swift in Sources */,
 				D35935061EF3C1910043C721 /* Result.swift in Sources */,
 				D31527031EF4041E007C8016 /* LocalizationHandler.swift in Sources */,

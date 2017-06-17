@@ -66,7 +66,6 @@ class MapViewController: UIViewController {
         }
         
         if let max = distances.max() {
-            print(max)
             let span = MKCoordinateSpanMake(max + 0.02, max + 0.02)
             let userRegion = MKCoordinateRegion(center: userLocation.coordinate, span: span)
             mapView.setRegion(userRegion, animated: true)
