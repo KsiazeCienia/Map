@@ -13,21 +13,19 @@ class DataBase {
     
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    //MARK:- TODO sprawdzanie czy coś jest już w bazie danych
     func save(pin: Pin) {
-        let place = Place(context: context) // Link Task & Context
+        let place = Place(context: context)
         place.name = pin.name
         place.id = Int64(pin.id)
         place.lat = pin.lat
         place.lng = pin.lng
         place.imagePath = pin.imagePath
         
-        // Save the data to coredata
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
-        
-        //let _ = navigationController?.popViewController(animated: true)
     }
     
-    func getData() {
+    func getData() -> [Pin] {
         var places = [Place]()
         
         do {
@@ -35,16 +33,19 @@ class DataBase {
         } catch {
             print("Fetching Failed")
         }
-        
-        
+        return parsePlace(places: places)
     }
     
-    private func parsePlace(places: [Place]) {
+    private func parsePlace(places: [Place]) -> [Pin] {
         var pins = [Pin]()
         
         for place in places {
-            //let pin = Pin(
+            guard let actualName = place.name else { continue }
+            guard let actualImagePath = place.imagePath else { continue }
+            let pin = Pin(id: Int(place.id), lng: place.lng, lat: place.lat, name: actualName, imagePath: actualImagePath)
+            pins.append(pin)
         }
+        return pins
     }
 }
 

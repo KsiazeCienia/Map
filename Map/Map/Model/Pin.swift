@@ -17,6 +17,14 @@ class Pin {
     let name: String
     let imagePath: String
     
+    init(id: Int, lng: Double, lat: Double, name: String, imagePath: String) {
+        self.id = id
+        self.lng = lng
+        self.lat = lat
+        self.name = name
+        self.imagePath = imagePath
+    }
+    
     init(withDictionar pinDict: [String:Any])   {
         let numberInString = pinDict[APIKeys.id] as? String ?? ""
         if let actualId = Int(numberInString) {
