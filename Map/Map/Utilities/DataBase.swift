@@ -13,16 +13,27 @@ final class DataBase {
     
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    //MARK:- TODO sprawdzanie czy coś jest już w bazie danych
     func save(pin: Pin) {
-        let place = Place(context: context)
-        place.name = pin.name
-        place.id = Int64(pin.id)
-        place.lat = pin.lat
-        place.lng = pin.lng
-        place.imagePath = pin.imagePath
-        
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        if !contains(id: pin.id) {
+            let place = Place(context: context)
+            place.name = pin.name
+            place.id = Int64(pin.id)
+            place.lat = pin.lat
+            place.lng = pin.lng
+            place.imagePath = pin.imagePath
+            
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        }
+    }
+    
+    func contains(id: Int) -> Bool {
+        var places = [Place]()
+        do {
+            places = try context.fetch(Place.fetchRequestForLast(withId: id))
+        } catch {
+            print("Fetching Failed")
+        }
+        return !places.isEmpty
     }
     
     func getData() -> [Pin] {
