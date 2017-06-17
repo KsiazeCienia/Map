@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -73,10 +74,10 @@
             </objects>
             <point key="canvasLocation" x="1624.8" y="-588.75562218890559"/>
         </scene>
-        <!--View Controller-->
+        <!--Single Place View Controller-->
         <scene sceneID="Ycu-EU-WPv">
             <objects>
-                <viewController id="f3Q-aV-g7B" sceneMemberID="viewController">
+                <viewController id="f3Q-aV-g7B" customClass="SinglePlaceViewController" customModule="Map" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="q1i-bw-163"/>
                         <viewControllerLayoutGuide type="bottom" id="hQZ-VB-bLi"/>
@@ -84,12 +85,79 @@
                     <view key="view" contentMode="scaleToFill" id="3r1-zL-2G4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bok-iu-1oL">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uOm-Fc-m1O">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="474.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="uOm-Fc-m1O" secondAttribute="height" multiplier="4:3" id="Lhc-gB-AiW"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cna-1Y-sTS">
+                                        <rect key="frame" x="15" y="474.5" width="345" height="34.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Długość geograficzna:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuE-da-xe4">
+                                        <rect key="frame" x="15" y="509" width="345" height="34.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lng Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uls-AS-7AM">
+                                        <rect key="frame" x="15" y="543.5" width="345" height="34.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Szerokość geograficzna:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dM6-oq-8g0">
+                                        <rect key="frame" x="15" y="578" width="345" height="34.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lat Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbW-jF-WFF">
+                                        <rect key="frame" x="15" y="612.5" width="345" height="34.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="KuE-da-xe4" secondAttribute="trailing" constant="15" id="2OZ-BW-3sR"/>
+                                    <constraint firstAttribute="trailing" secondItem="dM6-oq-8g0" secondAttribute="trailing" constant="15" id="8gW-h3-bE9"/>
+                                    <constraint firstItem="KuE-da-xe4" firstAttribute="leading" secondItem="Bok-iu-1oL" secondAttribute="leading" constant="15" id="DAQ-CZ-Bks"/>
+                                    <constraint firstAttribute="trailing" secondItem="jbW-jF-WFF" secondAttribute="trailing" constant="15" id="G5S-nR-94d"/>
+                                    <constraint firstItem="jbW-jF-WFF" firstAttribute="leading" secondItem="Bok-iu-1oL" secondAttribute="leading" constant="15" id="WBo-Ra-A8e"/>
+                                    <constraint firstItem="uls-AS-7AM" firstAttribute="leading" secondItem="Bok-iu-1oL" secondAttribute="leading" constant="15" id="dcC-P7-cGS"/>
+                                    <constraint firstAttribute="trailing" secondItem="uls-AS-7AM" secondAttribute="trailing" constant="15" id="gnH-UD-B6V"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cna-1Y-sTS" secondAttribute="trailing" constant="15" id="hOm-SY-iSd"/>
+                                    <constraint firstItem="Cna-1Y-sTS" firstAttribute="leading" secondItem="Bok-iu-1oL" secondAttribute="leading" constant="15" id="kCR-7p-tWz"/>
+                                    <constraint firstItem="dM6-oq-8g0" firstAttribute="leading" secondItem="Bok-iu-1oL" secondAttribute="leading" constant="15" id="xwy-ka-dbi"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Bok-iu-1oL" firstAttribute="top" secondItem="q1i-bw-163" secondAttribute="bottom" id="9uf-8u-Bo6"/>
+                            <constraint firstItem="Bok-iu-1oL" firstAttribute="leading" secondItem="3r1-zL-2G4" secondAttribute="leading" id="Cgz-yv-tzF"/>
+                            <constraint firstAttribute="trailing" secondItem="Bok-iu-1oL" secondAttribute="trailing" id="L20-iM-cCi"/>
+                            <constraint firstItem="hQZ-VB-bLi" firstAttribute="top" secondItem="Bok-iu-1oL" secondAttribute="bottom" id="lYo-Gj-kMt"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="image" destination="uOm-Fc-m1O" id="ay2-yM-fPt"/>
+                        <outlet property="latLabel" destination="jbW-jF-WFF" id="G84-HN-JXN"/>
+                        <outlet property="lngLabel" destination="uls-AS-7AM" id="aCA-se-bWY"/>
+                        <outlet property="nameLabel" destination="Cna-1Y-sTS" id="3Jh-v3-BLO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cf0-N7-iPp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2414" y="-583"/>
+            <point key="canvasLocation" x="2426" y="-589"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2cr-kB-YGs">

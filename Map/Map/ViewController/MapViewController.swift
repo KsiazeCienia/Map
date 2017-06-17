@@ -104,26 +104,27 @@ class MapViewController: UIViewController {
 extension MapViewController: CLLocationManagerDelegate, MKMapViewDelegate{
     
     
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let reuseIdentifier = "MyIdentifier"
-        if annotation is MKUserLocation { return nil }
-
-        
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier) as? MKPinAnnotationView
-        if annotationView == nil {
-            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
-            annotationView?.canShowCallout = false            // but turn off callout
-        } else {
-            annotationView?.annotation = annotation
-        }
-        
-        return annotationView
-    }
+//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//        let reuseIdentifier = "MyIdentifier"
+//        if annotation is MKUserLocation { return nil }
+//
+//        
+//        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier) as? MKPinAnnotationView
+//        if annotationView == nil {
+//            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
+//            annotationView?.canShowCallout = false            // but turn off callout
+//        } else {
+//            annotationView?.annotation = annotation
+//        }
+//        
+//        return annotationView
+//    }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        print("siusiak")
-        let pointAnnontation = view.annotation as? Annotation
-        print(pointAnnontation?.id)
+        if let pointAnnontation = view.annotation as? Annotation {
+            
+        }
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

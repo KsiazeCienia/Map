@@ -10,6 +10,7 @@
 		6C526E6FF64FC41F571C89A1 /* Pods_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD202F89159AE322D83E858 /* Pods_Map.framework */; };
 		D31527031EF4041E007C8016 /* LocalizationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31527021EF4041E007C8016 /* LocalizationHandler.swift */; };
 		D31527051EF52762007C8016 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31527041EF52762007C8016 /* ImageDownloader.swift */; };
+		D31527071EF55DF3007C8016 /* SinglePlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31527061EF55DF3007C8016 /* SinglePlaceViewController.swift */; };
 		D35934F71EF2EFB90043C721 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D35934F51EF2EFB90043C721 /* LaunchScreen.storyboard */; };
 		D35934F81EF2EFB90043C721 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D35934F61EF2EFB90043C721 /* Main.storyboard */; };
 		D35934FC1EF2EFF80043C721 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D35934FB1EF2EFF80043C721 /* Info.plist */; };
@@ -33,6 +34,7 @@
 		BBD202F89159AE322D83E858 /* Pods_Map.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Map.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D31527021EF4041E007C8016 /* LocalizationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationHandler.swift; sourceTree = "<group>"; };
 		D31527041EF52762007C8016 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		D31527061EF55DF3007C8016 /* SinglePlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SinglePlaceViewController.swift; path = ViewController/SinglePlaceViewController.swift; sourceTree = "<group>"; };
 		D35934D81EF2EBC50043C721 /* Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Map.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D35934F51EF2EFB90043C721 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D35934F61EF2EFB90043C721 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				D35934FF1EF2F0AA0043C721 /* MapViewController.swift */,
+				D31527061EF55DF3007C8016 /* SinglePlaceViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D31527071EF55DF3007C8016 /* SinglePlaceViewController.swift in Sources */,
 				D35935141EF3D6BA0043C721 /* PinProvider.swift in Sources */,
 				D359350C1EF3C5970043C721 /* APIManager.swift in Sources */,
 				D35935061EF3C1910043C721 /* Result.swift in Sources */,
