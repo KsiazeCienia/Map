@@ -14,6 +14,7 @@ class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
+    var userLocation = CLLocation()
     let pinProvider = PinProvider()
     var pins = [Pin]()
     
@@ -21,8 +22,7 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
 
         locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+        isUserLocalizationEnable()
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,12 +34,28 @@ class MapViewController: UIViewController {
             if let actualPins = pins {
                 self?.pins = actualPins
                 self?.setPins()
+                self?.setUpRegion()
             } else {
                 //TODO: Show alert
             }
             
         }) { [weak self] (error) in
             //TODO: SHOW API ALER ERRO
+        }
+    }
+   
+    private func setUpRegion() {
+        var distances = [Double]()
+        
+        for pin in pins {
+            let distanceFromUser = sqrt(abs(pow(userLocation.coordinate.latitude - pin.lat, 2)) + abs(pow(userLocation.coordinate.longitude-pin.lng, 2)))
+            distances.append(distanceFromUser)
+        }
+        
+        if let max = distances.max() {
+            let span = MKCoordinateSpanMake(max, max)
+            let userRegion = MKCoordinateRegion(center: userLocation.coordinate, span: span)
+            mapView.setRegion(userRegion, animated: true)
         }
     }
     
@@ -57,18 +73,32 @@ class MapViewController: UIViewController {
             mapView.addAnnotation(point)
         }
     }
+    
+    private func isUserLocalizationEnable() {
+        let authorizationStatus:CLAuthorizationStatus = CLLocationManager.authorizationStatus()
+        
+        if authorizationStatus == CLAuthorizationStatus.denied {
+            // TODO: Tell user that app functionality may be limited
+        }
+        else if authorizationStatus == CLAuthorizationStatus.notDetermined {
+            self.locationManager.requestWhenInUseAuthorization()
+        }
+        else if authorizationStatus == CLAuthorizationStatus.authorizedWhenInUse {
+            self.locationManager.requestLocation()
+        }
+    }
 }
 
 extension MapViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        if locations.count > 0 {
-            locationManager.stopUpdatingLocation()
-            updateMapWithUserLocation(location: locations[0])
-            downloadPins(withLng: locations[0].coordinate.longitude.magnitude, withLat: locations[0].coordinate.latitude.magnitude)
-            print(locations[0])
+        if let location = locations.first {
+            //locationManager.stopUpdatingLocation()
+            userLocation = location
             //updateMapWithUserLocation(location: locations[0])
+            downloadPins(withLng: location.coordinate.longitude.magnitude, withLat: location.coordinate.latitude.magnitude)
+            print(location)
         }
     }
     
