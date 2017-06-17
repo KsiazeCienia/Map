@@ -13,7 +13,7 @@
         <!--Ostanie-->
         <scene sceneID="Igg-Sa-8ug">
             <objects>
-                <viewController id="Whj-Zs-J46" sceneMemberID="viewController">
+                <viewController id="Whj-Zs-J46" customClass="LastVisitedViewController" customModule="Map" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="V3u-v7-bjy"/>
                         <viewControllerLayoutGuide type="bottom" id="MJc-9U-mOC"/>
@@ -36,6 +36,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Ostanie" id="QDw-7u-DwB"/>
+                    <connections>
+                        <outlet property="visitedTableView" destination="j2k-gL-oxG" id="QCC-2e-6t4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ad5-3O-lEI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

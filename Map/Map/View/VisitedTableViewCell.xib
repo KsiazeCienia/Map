@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="KGk-i7-Jjw" customClass="VisitedTableViewCell" customModule="Map" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="287" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0JD-bW-LPQ">
+                        <rect key="frame" x="0.0" y="0.0" width="287" height="99.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxW-9W-Ggc">
+                                <rect key="frame" x="15" y="0.0" width="257" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coordinate Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHp-Uf-Hxj">
+                                <rect key="frame" x="15" y="50" width="257" height="49.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="qxW-9W-Ggc" firstAttribute="leading" secondItem="0JD-bW-LPQ" secondAttribute="leading" constant="15" id="1bb-Xw-IXi"/>
+                            <constraint firstAttribute="trailing" secondItem="EHp-Uf-Hxj" secondAttribute="trailing" constant="15" id="7vC-am-a8O"/>
+                            <constraint firstAttribute="trailing" secondItem="qxW-9W-Ggc" secondAttribute="trailing" constant="15" id="QTh-MI-e8d"/>
+                            <constraint firstItem="EHp-Uf-Hxj" firstAttribute="leading" secondItem="0JD-bW-LPQ" secondAttribute="leading" constant="15" id="S9l-EG-Jgk"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="0JD-bW-LPQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="a5k-fd-K5G"/>
+                    <constraint firstItem="0JD-bW-LPQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="bwf-PB-FHP"/>
+                    <constraint firstAttribute="bottom" secondItem="0JD-bW-LPQ" secondAttribute="bottom" id="oy3-gP-GUb"/>
+                    <constraint firstAttribute="trailing" secondItem="0JD-bW-LPQ" secondAttribute="trailing" id="vIv-rw-RhG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="coordinateLabel" destination="EHp-Uf-Hxj" id="NEP-WQ-hWF"/>
+                <outlet property="nameLabel" destination="qxW-9W-Ggc" id="43J-W0-IBA"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

@@ -10,61 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Map/ViewController/MapViewController.swift"
-            timestampString = "519400033.866177"
+            timestampString = "519405541.324523"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "MapViewController"
             landmarkType = "4">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Map/ViewController/MapViewController.swift"
-            timestampString = "519400033.866177"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "downloadPins(withLng:withLat:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Map.MapViewController.(downloadPins in _3C6C585A644F7680B08675F9A75BC3DE) (withLng : Swift.Double, withLat : Swift.Double) -&gt; ()"
-                  moduleName = "Map"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/marcin/Documents/Map/Map/Map/ViewController/MapViewController.swift"
-                  timestampString = "519393673.637164"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "47">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Map.MapViewController.((downloadPins in _3C6C585A644F7680B08675F9A75BC3DE) (withLng : Swift.Double, withLat : Swift.Double) -&gt; ()).(closure #1)"
-                  moduleName = "Map"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/marcin/Documents/Map/Map/Map/ViewController/MapViewController.swift"
-                  timestampString = "519393673.639701"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "15">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -24,9 +24,12 @@ class Annotation: MKPointAnnotation {
 class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
+    
     let locationManager = CLLocationManager()
-    var userLocation = CLLocation()
     let pinProvider = PinProvider()
+    let dataBase = DataBase()
+    
+    var userLocation = CLLocation()
     var pins = [Pin]()
     var selectedPin: Pin?
     
@@ -114,6 +117,10 @@ class MapViewController: UIViewController {
         let singlePlaceVC = segue.destination as! SinglePlaceViewController
         if let actualId = annotation.id {
             singlePlaceVC.currentPin = pinWithId(id: actualId)
+            dataBase.save(pin: pinWithId(id: actualId))
+            for pin in dataBase.getData() {
+                print(pin.id)
+            }
         }
     }
 }
