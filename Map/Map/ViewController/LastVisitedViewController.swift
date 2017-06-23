@@ -18,12 +18,16 @@ final class LastVisitedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        pins = dataBase.getData()
         setUpTableView()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        pins = dataBase.getData()
     }
     
     private func setUpTableView() {

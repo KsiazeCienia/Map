@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6C526E6FF64FC41F571C89A1 /* Pods_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD202F89159AE322D83E858 /* Pods_Map.framework */; };
+		AEC212BC1EFD162D00582A2C /* Place+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC212BA1EFD162D00582A2C /* Place+CoreDataClass.swift */; };
+		AEC212BD1EFD162D00582A2C /* Place+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC212BB1EFD162D00582A2C /* Place+CoreDataProperties.swift */; };
 		D31527051EF52762007C8016 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31527041EF52762007C8016 /* ImageDownloader.swift */; };
 		D31527071EF55DF3007C8016 /* SinglePlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31527061EF55DF3007C8016 /* SinglePlaceViewController.swift */; };
 		D315270B1EF56D9D007C8016 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D315270A1EF56D9D007C8016 /* DataBase.swift */; };
@@ -35,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		956D3653450E9CE6D18F338B /* Pods-Map.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Map.release.xcconfig"; path = "Pods/Target Support Files/Pods-Map/Pods-Map.release.xcconfig"; sourceTree = "<group>"; };
+		AEC212BA1EFD162D00582A2C /* Place+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Place+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AEC212BB1EFD162D00582A2C /* Place+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Place+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B5F442686A512CB1827E14AD /* Pods-Map.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Map.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Map/Pods-Map.debug.xcconfig"; sourceTree = "<group>"; };
 		BBD202F89159AE322D83E858 /* Pods_Map.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Map.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D31527041EF52762007C8016 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
@@ -162,6 +166,8 @@
 			children = (
 				D359350F1EF3C87A0043C721 /* Pin.swift */,
 				D31527391EF592ED007C8016 /* Annotation.swift */,
+				AEC212BA1EFD162D00582A2C /* Place+CoreDataClass.swift */,
+				AEC212BB1EFD162D00582A2C /* Place+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -241,7 +247,7 @@
 				TargetAttributes = {
 					D35934D71EF2EBC50043C721 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = YY346RZE89;
+						DevelopmentTeam = ZMFMZR7T85;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -343,12 +349,14 @@
 				D31527321EF580AE007C8016 /* LastVisitedViewController.swift in Sources */,
 				D315270B1EF56D9D007C8016 /* DataBase.swift in Sources */,
 				D315270F1EF57898007C8016 /* Model.xcdatamodeld in Sources */,
+				AEC212BC1EFD162D00582A2C /* Place+CoreDataClass.swift in Sources */,
 				D315273A1EF592ED007C8016 /* Annotation.swift in Sources */,
 				D35935061EF3C1910043C721 /* Result.swift in Sources */,
 				D35935101EF3C87A0043C721 /* Pin.swift in Sources */,
 				D35935081EF3C1DB0043C721 /* URLBuilder.swift in Sources */,
 				D31527051EF52762007C8016 /* ImageDownloader.swift in Sources */,
 				D35935001EF2F0AA0043C721 /* MapViewController.swift in Sources */,
+				AEC212BD1EFD162D00582A2C /* Place+CoreDataProperties.swift in Sources */,
 				D359350A1EF3C1FD0043C721 /* APIClient.swift in Sources */,
 				D35934FE1EF2F0360043C721 /* AppDelegate.swift in Sources */,
 				D31527381EF5843A007C8016 /* UITableViewCell+Identifier.swift in Sources */,
@@ -459,10 +467,10 @@
 			baseConfigurationReference = B5F442686A512CB1827E14AD /* Pods-Map.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = YY346RZE89;
+				DEVELOPMENT_TEAM = ZMFMZR7T85;
 				INFOPLIST_FILE = "$(SRCROOT)/Map/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mwloczko.Map;
+				PRODUCT_BUNDLE_IDENTIFIER = mwloczko.Mapert;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -473,10 +481,10 @@
 			baseConfigurationReference = 956D3653450E9CE6D18F338B /* Pods-Map.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = YY346RZE89;
+				DEVELOPMENT_TEAM = ZMFMZR7T85;
 				INFOPLIST_FILE = "$(SRCROOT)/Map/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mwloczko.Map;
+				PRODUCT_BUNDLE_IDENTIFIER = mwloczko.Mapert;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
